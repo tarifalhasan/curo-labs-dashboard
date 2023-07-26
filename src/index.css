@@ -1,0 +1,554 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+
+    --ring: 217.2 32.6% 17.5%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+body {
+  font-size: 1rem;
+  background-color: #e1e3ea;
+  font-family: "Helvetica";
+}
+
+label {
+  font-size: 14px;
+}
+
+h5 {
+  color: black;
+  text-align: center;
+}
+
+.bg-black-curo {
+  background-color: #161a1e !important;
+}
+.text-black-curo {
+  color: #161a1e;
+}
+
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.btn-success {
+  width: 100%;
+  display: block;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.btn-info {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.btn-danger {
+  display: block;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.btn-outline-danger {
+  width: 100%;
+  margin-bottom: 5px;
+  margin-top: 4px;
+}
+
+/*
+* Navigation bar
+*/
+nav ul li.active {
+  background: rgba(255, 227, 234, 0.1);
+  color: #00f496;
+  position: relative;
+}
+nv ul li.active svg {
+  fill: #00f496;
+}
+nav ul li.active::before {
+  position: absolute;
+  content: " ";
+  height: 3px;
+  background: #00f496;
+  width: 100%;
+  bottom: 0;
+}
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  /* position: relative; */
+  height: 100%;
+  top: 0;
+  /* rtl:raw:
+  right: 0;
+  */
+  bottom: 0;
+  /* rtl:remove */
+  /* left: 0; */
+  z-index: 100; /* Behind the navbar */
+  /* width: 160px; */
+  padding: 0 0 0; /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 767.98px) {
+  .sidebar {
+    top: 5rem;
+  }
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #727272;
+}
+
+.sidebar .nav-link.active {
+  color: #2470dc;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: #2470dc;
+}
+
+.sidebar-heading {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.feather-info {
+  width: 24px;
+  height: 24px;
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 1.25rem;
+  /* background-color: rgba(0, 0, 0, .25); */
+  /* box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25); */
+}
+
+.navbar .navbar-toggler {
+  top: 0.25rem;
+  right: 1rem;
+}
+
+.navbar .form-control {
+  padding: 0.75rem 1rem;
+  border-width: 0;
+  border-radius: 0;
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-control-dark:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  overflow: auto;
+}
+
+.cell {
+  flex: 1 auto;
+  padding-top: 5px;
+  height: 100%;
+}
+
+form {
+  padding-bottom: 5px;
+}
+
+.form-group {
+  padding-bottom: 5px;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+/* .active, .collapsible:hover {
+  background-color: #ccc;
+} */
+.curo-table tbody tr td {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.collapse-content {
+  padding: 0 18px;
+  max-height: 0px;
+  overflow: hidden;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  transition: max-height 0.2s ease-out;
+}
+
+.trades {
+  padding: 20px;
+  text-align: center;
+}
+
+#datetimepicker,
+#datetimepicker1,
+#datetimepicker2,
+#datetimepicker3,
+#datetimepicker4,
+#datetimepicker5,
+#datetimepicker6,
+#datetimepicker7,
+#datetimepicker8,
+#datetimepicker9 {
+  visibility: hidden;
+  width: 0%;
+}
+
+.trade,
+.account,
+.home {
+  padding: 5px;
+  background-color: lightgrey;
+  border-radius: 20px;
+}
+
+.indicators,
+.parameters,
+.alltrades {
+  padding: 5px;
+  background-color: lightgrey;
+  border-radius: 0 0 20px 20px;
+}
+
+.heading {
+  padding: 5px;
+  margin-top: 5px;
+  background-color: lightgrey;
+  border-radius: 10px;
+}
+
+.chart,
+.backtesting-body,
+.account {
+  padding: 10px;
+  background-color: lightgrey;
+  border-radius: 10px;
+}
+
+/* Nav Tabs */
+.nav-link {
+  color: black;
+}
+
+#Parameters {
+  width: auto;
+  display: block;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+#Indicators,
+#Action {
+  width: 50%;
+  display: block;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.param-select {
+  width: 100%;
+  display: block;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.indicator-button {
+  width: 50%;
+  display: block;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.center {
+  text-align: center;
+}
+
+.form-control {
+  border: none;
+  border-bottom: 3px solid darkgrey;
+  background-color: lightgrey;
+}
+
+.sl-tp-button,
+.close-trade-button {
+  width: auto;
+  margin-right: 3px;
+  margin-top: 3px;
+  margin-bottom: 5px;
+}
+
+td {
+  vertical-align: baseline;
+}
+
+.form-check-input {
+  background-color: green;
+  border-color: green;
+}
+
+.form-check-input:checked {
+  background-color: red;
+  border-color: red;
+}
+
+/*
+* Modal: Vanilla JS implementation
+*/
+
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal.open {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+.modal-bg {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+.modal-container {
+  border-radius: 10px;
+  background: #fff;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  outline: none;
+  appearance: none;
+  color: lightgray;
+  background: none;
+  border: 0px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  background: #d7dee8;
+
+  border: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+}
+input[type="checkbox"]:checked {
+  background-color: #00f496;
+  color: white;
+}
+input[type="text"],
+input[type="number"] {
+  font-weight: 700;
+}
+
+.isOpen {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block !important;
+  z-index: 900;
+}
+.showTab {
+  display: block !important;
+}
+.activeTab {
+  border-bottom-width: 2px;
+  border-color: #00f496 !important;
+  font-weight: 700 !important;
+  color: #161a1e !important;
+}
+
+.choices__inner {
+  border-radius: 8px;
+  background: transparent;
+}
+.choices .choices__list--multiple {
+  display: none !important;
+}
+.choices .choices__input {
+  background: transparent;
+  margin-left: 30px;
+  font-weight: 700;
+  border: 0 !important;
+}
+
+.choices .choices__list--multiple .choices__item {
+  color: #888da3;
+  background: #f4f5f8;
+  border-radius: 100px;
+  border: 0;
+}
+.choices button.choices__button {
+  color: #888da3 !important;
+  border-left: 0 !important;
+  background-size: 15px !important;
+  background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 12 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.5 3.705L8.795 3L6 5.795L3.205 3L2.5 3.705L5.295 6.5L2.5 9.295L3.205 10L6 7.205L8.795 10L9.5 9.295L6.705 6.5L9.5 3.705Z' fill='%23888DA3'/%3E%3C/svg%3E%0A") !important;
+}
+
+[multiple],
+[type="date"],
+[type="datetime-local"],
+[type="email"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"],
+select,
+textarea {
+  outline: 0 !important;
+  outline-offset: 0 !important;
+  box-shadow: none !important;
+}
+
+.toast-alert {
+  display: none;
+}
+#toast-container .toast-alert {
+  display: flex;
+}
