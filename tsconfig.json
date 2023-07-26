@@ -22,7 +22,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": ["wouter", "react-ts-tradingview-widgets"]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

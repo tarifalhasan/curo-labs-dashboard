@@ -19,7 +19,7 @@ const MainHeader = () => {
   return (
     <header
       role="banner"
-      className="flex items-center bg-black-curo h-16 z-30 border-b shadow-sm transition-all duration-300 ease-in-out fixed left-0 right-0 top-0 px-5 md:px-8 filter backdrop-blur-2xl"
+      className="flex items-center bg-black-curo h-16 z-30 border-b shadow-sm transition-all duration-300 ease-in-out   px-5 md:px-8 filter backdrop-blur-2xl"
     >
       <div className="w-full h-full mx-auto">
         <div className="flex h-full items-center justify-between">
